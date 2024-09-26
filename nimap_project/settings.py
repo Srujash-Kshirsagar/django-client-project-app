@@ -39,7 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'rest_framework', 
+    'rest_framework.authtoken',
+
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,11 +96,11 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_django_db',      # Name of your database
-        'USER': 'django_user',        # MySQL username
-        'PASSWORD': 'Srujash@123',  # MySQL password
-        'HOST': 'localhost',          # Database server
-        'PORT': '3306',               # Default MySQL port
+        'NAME': 'my_django_db',                  # Name of your database
+        'USER': 'django_user',                   # MySQL username
+        'PASSWORD': 'Srujash@123',               # MySQL password
+        'HOST': 'localhost',                     # Database server
+        'PORT': '3306',                          # Default MySQL port
     }
 }
 
